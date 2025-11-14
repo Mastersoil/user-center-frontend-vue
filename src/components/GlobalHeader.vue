@@ -3,16 +3,16 @@
     <a-row :wrap="false">
       <a-col flex="200px">
         <div class="title-bar">
-          <img class="logo" src="../assets/logo.png" alt="logo" />
+          <img class="logo" src="../assets/logo.png" alt="logo"/>
           <div class="title">鱼皮用户中心</div>
         </div>
       </a-col>
       <a-col flex="auto">
         <a-menu
-          v-model:selectedKeys="current"
-          mode="horizontal"
-          :items="items"
-          @click="doMenuClick"
+            v-model:selectedKeys="current"
+            mode="horizontal"
+            :items="items"
+            @click="doMenuClick"
         />
       </a-col>
       <a-col flex="80px">
@@ -30,17 +30,17 @@
 </template>
 
 <script lang="ts" setup>
-import { h, ref } from "vue";
-import { CrownOutlined, HomeOutlined } from "@ant-design/icons-vue";
-import { MenuProps } from "ant-design-vue";
-import { useRouter } from "vue-router";
-import { useLoginUserStore } from "@/store/useLoginUserStore";
+import {h, ref} from "vue";
+import {CrownOutlined, HomeOutlined} from "@ant-design/icons-vue";
+import {MenuProps} from "ant-design-vue";
+import {useRouter} from "vue-router";
+import {useLoginUserStore} from "@/store/useLoginUserStore";
 
 const loginUserStore = useLoginUserStore();
 
 const router = useRouter();
 // 点击菜单后的路由跳转事件
-const doMenuClick = ({ key }: { key: string }) => {
+const doMenuClick = ({key}: { key: string }) => {
   router.push({
     path: key,
   });
@@ -78,9 +78,9 @@ const items = ref<MenuProps["items"]>([
   {
     key: "others",
     label: h(
-      "a",
-      { href: "https://www.codefather.cn", target: "_blank" },
-      "编程导航"
+        "a",
+        {href: "https://www.codefather.cn", target: "_blank"},
+        "编程导航"
     ),
     title: "编程导航",
   },
